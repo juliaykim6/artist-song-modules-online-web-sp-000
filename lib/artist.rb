@@ -2,6 +2,7 @@
 
 class Artist
   extend Memorable::ClassMethods
+  include Memorable::InstanceMethods
   include Paramable::
 
   attr_accessor :name
@@ -10,7 +11,7 @@ class Artist
   @@artists = []
 
   def initialize
-    self.class.all << self 
+    self.class.all << self
     @songs = []
   end
 
